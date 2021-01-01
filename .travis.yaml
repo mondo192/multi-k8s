@@ -5,27 +5,22 @@ services:
   - docker
 
 before_install:
-  - docker build -t mondo192/react-test -f ./client/Dockerfile.dev ./client 
+  - docker build -t epjjk/react-test -f ./client/Dockerfile.dev ./client 
 
 script:
-  - docker run -e CI=true mondo192/react-test npm run test -- --coverage
+  - docker run -e CI=true epjjk/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t mondo192/multi-client ./client
-  - docker build -t mondo192/multi-nginx ./nginx
-  - docker build -t mondo192/multi-server ./server
-  - docker build -t mondo192/multi-worker ./worker 
+  - docker build -t epjjk/multi-client ./client
+  - docker build -t epjjk/multi-nginx ./nginx
+  - docker build -t epjjk/multi-server ./server
+  - docker build -t epjjk/multi-worker ./worker
+    
+  # login to docker cli
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-
-
-deploy:
-  provider: elasticbeanstalk
-  region: eu-west-1
-  app: docker-react
-  env: DockerReact-env
-  bucket_name: elasticbeanstalk-eu-west-1-125892290802
-  bucket_path: docker-react
-  on:
-    branch: main
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  # publish images to docker hub
+  - docker push epjjk/multi-client
+  - docker push epjjk/multi-nginx
+  - docker push epjjk/multi-server
+  - docker push epjjk/multi-worker
