@@ -1,5 +1,3 @@
-#!/bin/bash
-
 docker build -t epjjk/multi-client:latest -t epjjk/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t epjjk/multi-server:latest -t epjjk/multi-server:$SHA -f ./server/Dockerfile ./server
 docker build -t epjjk/multi-worker:latest -t epjjk/multi-worker:$SHA -f ./worker/Dockerfile ./worker

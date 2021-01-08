@@ -17,7 +17,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_PASSWORD" --password-stdin
   - docker build -t epjjk/react-test -f ./client/Dockerfile.dev ./client
 script:
-  - docker run -e CI=true epjjk/react-test npm test -- --coverage
+  - docker run -e CI=true epjjk/react-test npm test
 deploy:
   provider: script
   script: bash ./deploy.sh
