@@ -9,7 +9,7 @@ docker push epjjk/multi-client:$SHA
 docker push epjjk/multi-server:$SHA
 docker push epjjk/multi-worker:$SHA
 
-kubectl apply -f ./k8s
+kubectl apply -f k8s
 
 kubectl set image deployments/client-deployments client=epjjk/multi-client:$SHA
 kubectl set image deployments/server-deployments server=epjjk/multi-server:$SHA
