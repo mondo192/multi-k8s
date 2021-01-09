@@ -1,2 +1,2 @@
 # multi-k8s
-A react web app running on kubernetes cluster 
+A full stack react web app with a worker process node running on a kubernetes cluster 
