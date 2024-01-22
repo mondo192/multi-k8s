@@ -11,7 +11,7 @@ COPY . .
 RUN npm run build
 
 
-FROM nginx:1.19.6-alpine
+FROM nginx:1.25.3-alpine
 
 EXPOSE 3000
 
