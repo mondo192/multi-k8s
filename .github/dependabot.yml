@@ -1,5 +1,6 @@
 version: 2
 updates:
-  - registry: "npm"
-    working-directory: "/server"
-    
+ - package-ecosystem: "npm"
+   directory: "server"
+   schedule:
+     internal: "daily"
