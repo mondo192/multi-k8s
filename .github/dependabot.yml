@@ -9,14 +9,22 @@ updates:
         dependency-type: "production"
       development-dependencies:
         dependency-type: "development"
+      
 
   - package-ecosystem: "npm"
     directory: "client"
     schedule:
       interval: "daily"
     groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
       react:
         patterns:
           - "react*"
         update-types:
           - "patch"
+    ignore:
+      - dependency-name: "react*"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
