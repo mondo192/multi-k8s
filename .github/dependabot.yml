@@ -19,7 +19,8 @@ updates:
         dependency-type: "production"
       exclude-patterns:
         - "react*"
-
       development-dependencies:
         dependency-type: "development"
-
+    react:
+      patterns:
+        - "react*"
