@@ -21,6 +21,7 @@ updates:
         - "react*"
       development-dependencies:
         dependency-type: "development"
-    react:
-      patterns:
-        - "react*"
+      react:
+        patterns:
+          - "react*"
+
