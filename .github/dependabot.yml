@@ -21,9 +21,9 @@ updates:
         patterns:
           - 'react*'
         update-types:
-          # - "major"
-          # - "minor"
           - 'patch'
     ignore:
+      - dependency-name: 'react*'
+        update-types: ['version-update:semver-major', 'version-update:semver-minor']
       - dependency-name: '*'
         update-types: ['version-update:semver-major', 'version-update:semver-patch']
