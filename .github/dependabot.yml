@@ -3,4 +3,4 @@ updates:
  - package-ecosystem: "npm"
    directory: "server"
    schedule:
-     internal: "daily"
+     interval: "daily"
