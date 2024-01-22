@@ -20,6 +20,10 @@ updates:
       react:
         patterns:
           - 'react*'
+        update-types:
+          # - "major"
+          # - "minor"
+          - 'patch'
     ignore:
       - dependency-name: '*'
-        update-types: ['version-update:semver-major', 'version-update:semver-minor']
+        update-types: ['version-update:semver-major', 'version-update:semver-patch']
