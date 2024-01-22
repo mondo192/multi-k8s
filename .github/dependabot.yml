@@ -8,6 +8,7 @@ updates:
       production-dependencies:
         dependency-type: "production"
       development-dependencies:
+
   - package-ecosystem: "npm"
     directory: "client"
     schedule:
@@ -17,3 +18,4 @@ updates:
         dependency-type: "production"
       development-dependencies:
         dependency-type: "development"
+
