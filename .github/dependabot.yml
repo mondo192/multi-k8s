@@ -37,9 +37,5 @@ updates:
     schedule:
       interval: 'daily'
     open-pull-requests-limit: 3
-    groups:
-      docker:
-        include:
-          - dependency-name: '*'
-            type: 'docker'
-
+    labels:
+      - 'docker'
