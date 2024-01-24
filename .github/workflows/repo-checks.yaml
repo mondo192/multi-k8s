@@ -1,12 +1,7 @@
 name: Dependabot fetch metadata
+
 on: 
   pull_request:
-  workflow_dispatch:
-
-permissions:
-  pull-requests: write
-  issues: write
-  repository-projects: write
 
 jobs:
   dependabot:
